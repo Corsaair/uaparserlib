@@ -1,0 +1,11 @@
+import redbean.*;
+import shell.FileSystem;
+
+compile( "src/uaparserlib.as" );
+
+if( FileSystem.exists( "uaparserlib.abc" ) )
+{
+	FileSystem.removeFile( "uaparserlib.abc" );
+}
+
+FileSystem.move( "src/uaparserlib.abc", "uaparserlib.abc" );
